@@ -13,7 +13,7 @@ public class Animation extends AnimationTimer {
     private Simulation simulation;
     private Pane pane;
     private long last = 0;
-    private String mementosDirectory = "mementos/";
+    private String mementosDirectory = ".\\src\\main\\resources\\mementos\\";
     private long elapsedFrames = 0L;
 
     public Animation(Simulation simulation, Pane pane) {
@@ -28,11 +28,6 @@ public class Animation extends AnimationTimer {
             simulation.checkInfections();
             simulation.resetInfectionTimers();
             simulation.spawnNewEntities(pane);
-
-//            if (elapsedFrames-- % 25 == 0) {
-//                save();
-//            }
-
             last = now;
         }
     }

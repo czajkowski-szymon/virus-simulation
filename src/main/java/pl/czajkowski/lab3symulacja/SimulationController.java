@@ -87,9 +87,8 @@ public class SimulationController {
 
     @FXML
     public void restore() {
-        ClassLoader classLoader = getClass().getClassLoader();
         FileChooser fileChooser = new FileChooser();
-        File initialDirectory = new File(classLoader.getResource("mementos").getFile());
+        File initialDirectory = new File(".\\src\\main\\resources\\mementos");
         fileChooser.setInitialDirectory(initialDirectory);
         File selectedFile = fileChooser.showOpenDialog(null);
         if (selectedFile == null) {
