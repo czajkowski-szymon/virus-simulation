@@ -87,8 +87,10 @@ public class SimulationController {
 
     @FXML
     public void restore() {
+        ClassLoader classLoader = getClass().getClassLoader();
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setInitialDirectory(new File("C:\\Users\\Szymon\\Dev\\virus-simulation\\mementos"));
+        File initialDirectory = new File(classLoader.getResource("mementos").getFile());
+        fileChooser.setInitialDirectory(initialDirectory);
         File selectedFile = fileChooser.showOpenDialog(null);
         if (selectedFile == null) {
             return;
